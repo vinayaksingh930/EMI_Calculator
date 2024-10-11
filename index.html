@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💵</text></svg>"
+    />
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">EMI Calculator</h1>
+        <math>
+            <mi>EMI</mi> <mo>=</mo>
+            <mfrac>
+                <mrow>
+                    <mi>P</mi> <mo>×</mo> <mi>R</mi> <mo>×</mo>
+                    <msup>
+                        <mfenced>
+                            <mrow>
+                                <mo>(</mo> <mn>1</mn> <mo>+</mo> <mi>R</mi> <mo>)</mo>
+                            </mrow>
+                        </mfenced>
+                        <mi>N</mi>
+                    </msup>
+                </mrow>
+                <mrow>
+                    <msup>
+                        <mfenced>
+                            <mrow>
+                                <mo>(</mo> <mn>1</mn> <mo>+</mo> <mi>R</mi> <mo>)</mo>
+                            </mrow>
+                        </mfenced>
+                        <mi>N</mi>
+                    </msup>
+                    <mo>-</mo> <mn>1</mn>
+                </mrow>
+            </mfrac>
+        </math>
+
+        <!-- Dropdown for Loan Type -->
+        <div class="input-container">
+            <label for="loanType">Loan Type
+                <select id="loanType">
+                    <option value="personal">Personal Loan</option>
+                    <option value="vehicle">Vehicle Loan</option>
+                    <option value="educational">Educational Loan</option>
+                </select>
+            </label>
+
+            <!-- Principal Loan Amount -->
+            <label for="amount">Principal Loan Amount ₹
+                <input id="amount" type="number" value="25000" />
+            </label>
+
+            <!-- Annual Interest Rate -->
+            <label for="interest">Annual Interest Rate %
+                <input id="interest" type="number" value="4" />
+            </label>
+
+            <!-- Number of Months -->
+            <label for="month">No. of Months to Pay
+                <input id="month" type="number" value="24" />
+            </label>
+        </div>
+
+        <!-- Button to Generate EMI -->
+        <button id="generateEmiBtn">Generate EMI</button>
+
+        <p>Monthly Payment (~EMI) = <span id="emi"></span></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
